@@ -1,0 +1,184 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btn-menu {
+    display: none;
+}
+
+div label {
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+.hamburguesa {
+    width: 30px;
+    height: 30px;
+}
+
+.rayita {
+    border: solid 2px indianred;
+    display: block;
+    margin: 5px 0px;
+}
+
+footer {
+    font-size: 10px;
+}
+
+.estilogeneral {
+    text-align: center;
+    color: white;
+    padding: 1px 3px;
+    margin: 0px;
+    background: indianred;
+}
+
+.estilogeneral h1 {
+    margin: 0px;
+}
+
+.estilogeneral h3 {
+    margin: 1px;
+}
+
+.piecera {
+    margin-top: 9%;
+}
+
+.menu {
+    color: rgb(182, 49, 49);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.menu li:hover {
+    background: rgb(182, 49, 49, 0.3);
+}
+
+.menu li {
+    list-style: none;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1em;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: indianred;
+}
+
+.titulo {
+    color: indianred;
+    font-size: 3em;
+}
+
+.separador {
+    border-bottom: solid 3px indianred;
+}
+
+.contenido {
+    margin-bottom: 53px;
+}
+
+.productos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    text-align: center;
+}
+
+.item:hover {
+    border: solid 1px indianred;
+    border-radius: 15px;
+}
+
+.imagen:hover {
+    transform: translate(-35px);
+    transition: all 0.5s ease;
+}
+
+.descripcion {
+    display: block;
+}
+
+.precio {
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+/* Media Queries - Esta opcion nos permite colocar un estilo condicional al tamaño de la pantalla
+    1080px FULLHD
+    720px HD (Tablets)
+    640px QHD (Tablet de 7")
+    320px Celulares
+*/
+
+@media(max-width:720px) {
+    div label {
+        display: block;
+    }
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .menu li {
+        display: block;
+    }
+    .menu {
+        position: absolute;
+        background: indianred;
+        width: 100%;
+        margin-left: -110%;
+        transition: all 0.5s;
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    .menu li a {
+        color: white;
+    }
+    .menu li {
+        border-top: 1px solid #fff;
+    }
+    #btn-menu:checked~.menu {
+        margin: 0;
+    }
+    .rayita {
+        transition: all 0.5s ease-in-out;
+    }
+    .equis01 {
+        transform: translateY(8px) rotate(-45deg);
+        background-color: indianred;
+    }
+    .equis02 {
+        transform: translateX(-100px);
+        background-color: indianred;
+    }
+    .equis03 {
+        transform: translateY(-10px) rotate(45deg);
+        background-color: indianred;
+    }
+}
+
+@media(max-width:300px) {
+    .productos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
